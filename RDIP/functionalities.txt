@@ -1,0 +1,14 @@
+1.From the dropdown we can select English or Hindi language.After Selection a line appears asking to form a sentence with a randomly chosen English or Hindi sentence with Jumbled words below it.
+
+2.When  we click on any of the words and that word gets removed from the jumbled sentence and another message comes i.e. Formed Sentence (after selecting words): comes along with the clicked word we chose below it. Also, reform the sentence button is also visible.
+
+3.The reform sentence button at any moment returns how many ever words you have chosen back to the jumbled sentence along with hiding the message  Formed Sentence (after selecting words). If it is clicked after you have selected all words, it will again return the words back to the jumbled order. This button basically acts as a reset button.
+
+4.As we Click on the words they get added to the Formed Sentence.
+
+5.When we click on the last word "Check the Correctness of the sentence appears". This button returns either "Right Answer!" or "Wrong Answer!" based on the formed sentence.
+
+6.If it is a wrong answer, a button with "Get correct answer" is visible. This button returns the correct answer and it is changed to "Hide the correct Answer".The Hide the correct sentence hide the answer and becomes "get answers" when clicked and so on. 
+
+
+cd                                
