@@ -79,3 +79,22 @@ var hindi=["राम और श्याम बाजार गयें"
 ," है वहाँ एक बड़ी सी किताब"
 ,"है वहाँ बड़ी सी एक किताब"];
 document.getElementById("demo1").innerHTML =hindi[Math.floor(Math.random()*45)];
+
+function myfun(){
+	var s=document.getElementById("p").value;
+	if(s=="english"){
+		document.getElementById("form").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words<br>(select the buttons in proper order)";
+		
+	}else if (s="hindi"){
+		document.getElementById("form").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words<br>(select the buttons in proper order)";
+		
+	}else  if(s="select language"){
+	alert("Select language");
+}
+}
+
+
+
+
+
+
