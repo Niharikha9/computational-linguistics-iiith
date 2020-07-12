@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
 <head>
-	<title>Unit 3</title>
-	
+	<meta content="text/html; 
+  charset=utf-8" http-equiv="Content-Type">
+  <script defer src="Sentence.js"></script>
 </head>
 <body>
-	<h1>Experiment</h1>
+	<h1>Experiment:</h1><br><br>
 	<center>
-<select id="p" onchange="myfun()">
-	<option value="select language">--Select Language--</option>
-	<option value="english">English</option>
-	<option value="hindi">Hindi</option>
-</select>
-<h3 id="form" style="color: blue;"></h3>
-<div id="buttons" class="words"></div>
-</center>
-<script src="Sentence.js">
-</script>
-
+	<select id='language' onchange='dropdown();'>
+		<option value='select'>---Select Language--- </option>
+		<option value='english'>English</option>
+		<option value='hindi'>Hindi</option>
+	</select>;
+	<h3 id="demo1" style="color: blue"></h3> 
+			<p id="buttons"></p>
+			<h3 id="demo2" style="color: blue"></h3>
+			<p id="sentence"></p>
+			<p id="reform"></p>
+			<p id="correctness"></p>
+			<h2 id="final"></h2>
+			<p id="Correct-answers"></p>
+	</center>	
 </body>
 </html>
-
