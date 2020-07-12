@@ -188,10 +188,11 @@ function formed(id,value){
 }
 
 function reform(){
-	for(i=0;i<=t;i++){
+	for(var i=0;i<=t;i++){
 		document.getElementById('button'+i).style.display = "";
 	}
-	document.getElementById("sentence").innerHTML = "";
+	word = "";
+	document.getElementById("sentence").innerHTML = word;
 	document.getElementById("reform").innerHTML = "";
 	document.getElementById("demo2").innerHTML = "";
 	document.getElementById("correctness").innerHTML = "";
