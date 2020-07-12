@@ -96,7 +96,7 @@ function dropdown(){
 		word = "";
 		listanswers = "";
 		answers.innerHTML = "";
-		document.getElementById("final").innerHTML = "";
+		document.getElementById("cmp").innerHTML = "";
 		document.getElementById("demo2").innerHTML = "";
 		document.getElementById("sentence").innerHTML = "";
 		document.getElementById("reform").innerHTML = "";
@@ -133,10 +133,10 @@ function dropdown(){
 		
 	}
 	else if(s == 'hindi'){
-		wordstring = "";
+		word = "";
 		listanswers = "";
 		answers.innerHTML = "";
-		document.getElementById("final").innerHTML = "";
+		document.getElementById("cmp").innerHTML = "";
 		document.getElementById("correctness").innerHTML = "";
 		document.getElementById("demo2").innerHTML = "";
 		document.getElementById("sentence").innerHTML = "";
@@ -183,7 +183,7 @@ function formed(id,value){
 	document.getElementById("reform").innerHTML = "<button id='re' onclick='reform();'>Re-form the Sentence</button>";
 	click ++;
 	if(click == btnlen){
-		document.getElementById("correctness").innerHTML = "<button id='crct' onclick='result();'>Check the correctness of the sentence</button>";
+		document.getElementById("correctness").innerHTML = "<button id='crct' onclick='check();'>Check the correctness of the sentence</button>";
 	}
 }
 
@@ -196,8 +196,25 @@ function reform(){
 	document.getElementById("reform").innerHTML = "";
 	document.getElementById("demo2").innerHTML = "";
 	document.getElementById("correctness").innerHTML = "";
-	document.getElementById("final").innerHTML = "";
+	document.getElementById("cmp").innerHTML = "";
 	click = 0;
 	listanswers = "";
 	answers.innerHTML = "";
 }
+
+
+function check(){
+	var p = word.trim();
+	var check;
+	if(s=='english'){
+		check = english[rand].includes(p);		
+	}
+	else if(s=='hindi'){
+		check = hindi[rand].includes(p);
+	}
+	if(check)
+		document.getElementById("cmp").innerHTML = "<font color ='green'>Right Answer!!!</font><br>";
+	else
+		document.getElementById("cmp").innerHTML = "<font color ='red'>Wrong Answer!!!</font><br><br><br><button id='correctbut'>Get Correct Sentence</button>";
+}
+
