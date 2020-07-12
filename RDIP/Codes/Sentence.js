@@ -83,7 +83,7 @@ var hindi = [["राम और श्याम बाजार गयें",
               "है वहाँ बड़ी सी एक किताब"]];
 
 var s;
-var n;
+var t;
 var btnlen, click;
 var word ="";
 var rand;
@@ -106,7 +106,7 @@ function dropdown(){
 		var esen = english[rand][0];
 		var wd = esen.split(" ");
 	    x = wd.length;
-	    n = wd.length-1;
+	    t = wd.length-1;
 	    var  temp, q;
 		while(0!==x){
 			q = Math.floor(Math.random()*x);
@@ -146,7 +146,7 @@ function dropdown(){
 		var hsen = hindi[rand][0];
 		var wd = hsen.split(" ");
 		x = wd.length;
-		n = wd.length-1;
+		t = wd.length-1;
 	    var  temp, q;
 		while(0!==x){
 			q = Math.floor(Math.random()*x);
@@ -185,4 +185,18 @@ function formed(id,value){
 	if(click == btnlen){
 		document.getElementById("correctness").innerHTML = "<button id='crct' onclick='result();'>Check the correctness of the sentence</button>";
 	}
+}
+
+function reform(){
+	for(i=0;i<=t;i++){
+		document.getElementById('button'+i).style.display = "";
+	}
+	document.getElementById("sentence").innerHTML = "";
+	document.getElementById("reform").innerHTML = "";
+	document.getElementById("demo2").innerHTML = "";
+	document.getElementById("correctness").innerHTML = "";
+	document.getElementById("final").innerHTML = "";
+	click = 0;
+	listanswers = "";
+	answers.innerHTML = "";
 }
