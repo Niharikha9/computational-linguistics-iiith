@@ -239,7 +239,7 @@ function getCorrectanswers(){
 	}
 	else if(s=='hindi'){
 		num = hindi[rand].length-1;
-		document.getElementById("cmp").innerHTML = "<font color ='red';fone size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='hide();'>Hide Correct Sentence</button><br><br>";
+		document.getElementById("cmp").innerHTML = "<font color ='red';fone size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='hide();'>Hide the correct Sentence</button><br><br>";
 		for(var i=0;i<=num;i++){
 			listanswers += hindi[rand][i]+"<br>";
 		}
