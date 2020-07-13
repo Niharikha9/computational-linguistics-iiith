@@ -1,3 +1,5 @@
+//Corpus
+
 var english = [["John ate an apple before afternoon",
                 "before afternoon John ate an apple",
                 "John before afternoon ate an apple"],
@@ -87,8 +89,9 @@ var t;
 var btnlen, click;
 var word ="";
 var rand;
-
 var listanswers = "";
+
+//Selection of language and generating random sentence.
 
 function dropdown(){
     s = document.getElementById('language').value;
@@ -102,7 +105,7 @@ function dropdown(){
 		document.getElementById("sentence").innerHTML = "";
 		document.getElementById("reform").innerHTML = "";
 		document.getElementById("correctness").innerHTML = "";
-		document.getElementById("demo1").innerHTML = "<br><br><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b><br><i>(select the buttons in proper order)</i>";
+		document.getElementById("demo1").innerHTML = "<br><br><font color='darkblue'><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></font><br><font color='blue'><i>(select the buttons in proper order)</i></font>";
 	    rand = Math.floor(Math.random() * 9);
 		var esen = english[rand][0];
 		var wd = esen.split(" ");
@@ -137,12 +140,11 @@ function dropdown(){
 		word = "";
 		listanswers = "";
 		document.getElementById("Correct-answers").innerHTML = "";
-		document.getElementById("cmp").innerHTML = "";
-		document.getElementById("correctness").innerHTML = "";
+		document.getElementById("cmp").innerHTML = "";		
 		document.getElementById("demo2").innerHTML = "";
 		document.getElementById("sentence").innerHTML = "";
 		document.getElementById("reform").innerHTML = "";
-		document.getElementById("demo1").innerHTML = "<br><br><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b><br><i>(select the buttons in proper order)</i>";
+		document.getElementById("demo1").innerHTML = "<br><br><font color=darkblue><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></font><br><font color='blue'><i>(select the buttons in proper order)</i></font>";
 	    rand = Math.floor(Math.random() * 6);
 		var hsen = hindi[rand][0];
 		var wd = hsen.split(" ");
@@ -174,9 +176,10 @@ else if(s="select"){
 	alert("Select language");
 }
 }
+
+//The words that are clickedare combined into a sentence
 function formed(id,value){
-	
-	document.getElementById("demo2").innerHTML = "<b>Formed Sentence</b><i>(after selecting words)</i>:";
+	document.getElementById("demo2").innerHTML = "<font color='darkblue'><b>Formed Sentence</b></font><font color='blue'><i>(after selecting words)</i></font>:";
 	word += value ;
 	word += " ";
 	document.getElementById("sentence").innerHTML = word;
@@ -188,6 +191,8 @@ function formed(id,value){
 	}
 }
 
+
+//Functionality of reform button
 function reform(){
 	for(var i=0;i<=t;i++){
 		document.getElementById('button'+i).style.display = "";
@@ -204,7 +209,7 @@ function reform(){
 	
 }
 
-
+//Validating the formed sentence
 function check(){
 	var p = word.trim();
 	var check;
@@ -220,7 +225,7 @@ function check(){
 		document.getElementById("cmp").innerHTML = "<font color ='red'>Wrong Answer!!!</font><br><br><button id='correct' onclick='getCorrectanswers();'>Get Correct Sentence</button>";
 }
 
-
+//Shows the list of correct answers 
 function getCorrectanswers(){
 	listanswers = "";
 	var num = 0;
@@ -242,13 +247,13 @@ function getCorrectanswers(){
 	}
 }
 
-
+//Hides the correct amswers
 function hide(){
 	document.getElementById("cmp").innerHTML = "<font color ='red'>Wrong Answer!!!</font><br><br><button id='correct' onclick='toggle();'>Get Answers</button><br><br><br>";
 	document.getElementById("Correct-answers").style.display = "none";
 }
 
-
+//Toggle between get answers and hide the correct answer
 function toggle(){
 	var r=document.getElementById("Correct-answers")
 	if(r.style.display == 'none'){
