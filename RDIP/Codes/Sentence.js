@@ -106,7 +106,7 @@ function dropdown(){
 		document.getElementById("reform").innerHTML = "";
 		document.getElementById("correctness").innerHTML = "";
 		document.getElementById("demo1").innerHTML = "<br><br><font color='darkblue'><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></font><br><font color='blue'><i>(select the buttons in proper order)</i></font>";
-	    rand = Math.floor(Math.random() * 9);
+	    rand = Math.floor(Math.random() * 10);
 		var esen = english[rand][0];
 		var wd = esen.split(" ");
 	    x = wd.length;
@@ -127,7 +127,7 @@ function dropdown(){
 		click = 0;
 		for( var i=0;i<=wd.length-1;i++){
 			content = wd[i];
-			btns = "<button id='button"+i+"'onclick='formed(this.id,this.value)' value='"+content+"'>"+content+"</button> &nbsp;&nbsp;";
+			btns = "<button style='font-size:20px'; id='button"+i+"'onclick='formed(this.id,this.value)' value='"+content+"'>"+content+"</button>&nbsp;&nbsp;";
 			finalbtns += btns;
 			btnlen++;
 		}
@@ -145,7 +145,7 @@ function dropdown(){
 		document.getElementById("sentence").innerHTML = "";
 		document.getElementById("reform").innerHTML = "";
 		document.getElementById("demo1").innerHTML = "<br><br><font color=darkblue><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></font><br><font color='blue'><i>(select the buttons in proper order)</i></font>";
-	    rand = Math.floor(Math.random() * 6);
+	    rand = Math.floor(Math.random() * 7);
 		var hsen = hindi[rand][0];
 		var wd = hsen.split(" ");
 		x = wd.length;
@@ -165,7 +165,7 @@ function dropdown(){
 		click = 0;
 		for(var i=0;i<=wd.length-1;i++){
 			content = wd[i];
-			btns = "<button id='button"+i+"' onclick='formed(this.id,this.value)' value='"+content+"'>"+content+"</button> &nbsp;&nbsp;";
+			btns = "<button style='font-size:20px' id='button"+i+"' onclick='formed(this.id,this.value)' value='"+content+"'>"+content+"</button> &nbsp;&nbsp;";
 			finalbtns += btns;
 			btnlen++;
 		}
@@ -184,10 +184,10 @@ function formed(id,value){
 	word += " ";
 	document.getElementById("sentence").innerHTML = word;
 	document.getElementById(id).style.display = "none";
-	document.getElementById("reform").innerHTML = "<button id='re' onclick='reform();'>Re-form the Sentence</button>";
+	document.getElementById("reform").innerHTML = "<button style='font-size:20px'; id='re' onclick='reform();'>Re-form the Sentence</button>";
 	click ++;
 	if(click == btnlen){
-		document.getElementById("correctness").innerHTML = "<button id='crct' onclick='check();'>Check the correctness of this sentence</button>";
+		document.getElementById("correctness").innerHTML = "<button style='font-size:20px' id='crct' onclick='check();'>Check the correctness of this sentence</button>";
 	}
 }
 
@@ -220,9 +220,9 @@ function check(){
 		check = hindi[rand].includes(p);
 	}
 	if(check)
-		document.getElementById("cmp").innerHTML = "<font color ='green'>Right Answer!!!</font>";
+		document.getElementById("cmp").innerHTML = "<br><font color ='green';font size='25px'>Right Answer!!!</font>";
 	else
-		document.getElementById("cmp").innerHTML = "<font color ='red'>Wrong Answer!!!</font><br><br><button id='correct' onclick='getCorrectanswers();'>Get Correct Sentence</button>";
+		document.getElementById("cmp").innerHTML = "<br><font color ='red';font size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='getCorrectanswers();'>Get Correct Sentence</button>";
 }
 
 //Shows the list of correct answers 
@@ -231,25 +231,25 @@ function getCorrectanswers(){
 	var num = 0;
 	if(s == 'english'){
 		num = english[rand].length-1;
-		document.getElementById("cmp").innerHTML = "<font color ='red'>Wrong Answer!!!</font><br><br><button id='correctbut' onclick='hide();'>Hide Correct Sentence</button><br><br>";
+		document.getElementById("cmp").innerHTML = "<font color ='red'; fone size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='hide();'>Hide Correct Sentence</button><br><br>";
 		for(var i=0;i<=num;i++){
 		   listanswers += english[rand][i]+"<br>";
 		}
-		document.getElementById("Correct-answers").innerHTML = listanswers;
+		document.getElementById("Correct-answers").innerHTML = "<br>"+"<font size='5px'>"+listanswers;+"</font>"
 	}
 	else if(s=='hindi'){
 		num = hindi[rand].length-1;
-		document.getElementById("cmp").innerHTML = "<font color ='red'>Wrong Answer!!!</font><br><br><button id='correct' onclick='hide();'>Hide Correct Sentence</button><br><br>";
+		document.getElementById("cmp").innerHTML = "<font color ='red';fone size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='hide();'>Hide Correct Sentence</button><br><br>";
 		for(var i=0;i<=num;i++){
 			listanswers += hindi[rand][i]+"<br>";
 		}
-		document.getElementById("Correct-answers").innerHTML = listanswers;
+		document.getElementById("Correct-answers").innerHTML = "<br>"+"<font size='5px'>"+listanswers;+"</font>"
 	}
 }
 
 //Hides the correct amswers
 function hide(){
-	document.getElementById("cmp").innerHTML = "<font color ='red'>Wrong Answer!!!</font><br><br><button id='correct' onclick='toggle();'>Get Answers</button><br><br><br>";
+	document.getElementById("cmp").innerHTML = "<font color ='red';fone size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='toggle();'>Get Answers</button><br><br><br>";
 	document.getElementById("Correct-answers").style.display = "none";
 }
 
@@ -258,6 +258,6 @@ function toggle(){
 	var r=document.getElementById("Correct-answers")
 	if(r.style.display == 'none'){
 		r.style.display = "";
-		document.getElementById("cmp").innerHTML = "<font color ='red'>Wrong Answer!!!</font><br><br><button id='correct' onclick='hide();'>Hide Correct Sentence</button>";
+		document.getElementById("cmp").innerHTML = "<font color ='red';font size='25px'>Wrong Answer!!!</font><br><br><button style='font-size:20px' id='correct' onclick='hide();'>Hide Correct Sentence</button>";
 	}
 }

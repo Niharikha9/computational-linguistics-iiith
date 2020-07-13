@@ -3,12 +3,13 @@
 <head>
 	<meta content="text/html; 
   charset=utf-8" http-equiv="Content-Type">
+  <style type="text/css" src="style.css"></style>
   <script defer src="Sentence.js"></script>
 </head>
 <body>
-	<p style="font-size:30px;font-family: sans-serif" >Experiment</p><br><br>
+	<p id="heading" style="font-size:30px;font-family: sans-serif">Experiment</p><br>
 	<center>
-	<select id='language' onchange='dropdown();' style="font-size: 20px">
+	<select id='language' onchange='dropdown();' style="font-size:20px;font-family: sans-serif">
 		<option value='select'>---Select Language--- </option>
 		<option value='english'>English</option>
 		<option value='hindi'>Hindi</option>
@@ -18,9 +19,9 @@
 			<p id="demo2" style="font-size:20px;font-family: sans-serif"></p>
 			<p id="sentence" style="font-size: 30px;color:black;font-family: sans-serif"></p>
 			<p id="reform"></p>
-			<p id="correctness" style="font-size:40px;font-family: sans-serif"></p>
-			<h2 id="cmp"></h2>
-			<p id="Correct-answers"></p>
+			<p id="correctness" style="font-family: sans-serif"></p>
+			<h2 id="cmp" style="font-family: sans-serif"></h2>
+			<p id="Correct-answers" style="font-family: sans-serif"></p>
 	</center>	
 </body>
 </html>
