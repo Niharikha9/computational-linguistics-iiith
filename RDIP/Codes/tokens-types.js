@@ -59,11 +59,17 @@ function cal(){
 		document.getElementById("type").style.backgroundColor = "red";
 	}
 	if(tokens==t1 && types==t2){
-		document.getElementById("demo5").innerHTML="<font color='green'>Right Answer</font>"+"<br><br><button>Continue</button>"
+		document.getElementById("demo5").innerHTML="<font color='green'>Right Answer</font>"+"<br><br><button onclick='newtype()'>Continue</button>"
 	}else{
 		document.getElementById("demo6").innerHTML="<font color='red'>Wrong Answer</font>"
 	}
 	    
+}
+
+function newtype(){
+	document.getElementById("demo4").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.";
+	document.getElementById("demo5").innerHTML="<table><tr><td>#new types</td></tr><tr><td><input type='text' id='new'></td></tr></table>";
+	document.getElementById("demo6").innerHTML="<br><button>Submit</button>";
 }
 
 
