@@ -2,20 +2,23 @@
 <html>
 <head>
 <title>TOKENS-TYPES</title>
-<script type="text/javascript" src="tokens-types.js"></script>
+<link rel = "stylesheet" type = "text/css" href = "style4.css">
+<script src="../Libraries/require.js"></script>
+<script type="text/javascript" src="../Libraries/node_modules/snowball/stemmer/lib/Snowball.min.js"></script>
+
 </head>
 <body>
-	<h1>Experiment</h1>
+	<h1 style="font-family: lucida sans unicode">Experiment</h1>
 	<center>
-		<select id="corpus" onchange="dropdown()">
+		<select id="corpus" onchange="dropdown()" style="font-size: 20px">
 			<option value="select">---Select a Corpus---</option>
 			<option value="corpus1">Corpus 1</option>
 			<option value="corpus2">Corpus 2</option>
 			<option value="corpus3">Corpus 3</option>
 		</select>
 	
-	<p id="demo1"></p><br>
-	<p id="demo2"></p>
+	<p id="demo1" style="font-family: lucida sans unicode;font-size: 20px" ></p><br>
+	<p id="demo2" style="font-family: lucida sans unicode;font-size: 20px"></p>
     <p id="demo3"></p><br>
     <p id="demo4"></p>
     <p id="demo5"></p>

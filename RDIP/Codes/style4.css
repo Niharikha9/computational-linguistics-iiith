@@ -1,0 +1,31 @@
+table {
+   border-collapse : collapse;
+   width : auto; 
+   margin : auto;
+   border-width : 10px;
+}
+td {
+   padding : 8px;
+   height : 30px;
+   border : 2px solid #ddd;
+}
+#token, #type {
+   padding : 3px;
+   width : 65px;
+}
+button{
+	font-size: 20px;
+}
+#demo4{
+	font-size: 20px;
+}
+#demo6{
+	font-size: 20px;
+}
+#demo5{
+	font-size: 20px;
+}
+#new{
+	width: 70px;
+	height: 30px
+}

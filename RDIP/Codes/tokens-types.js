@@ -4,7 +4,6 @@ var passage2='A wolf carried off a lamb. The lamb said, "I know you are going to
 
 var passage3='A man had a little dog, and he was very fond of it. He would pat its head, and take it on his knee, and talk to it. Then he would give it little bits of food from his own plate. A donkey looked in at the window and saw the man and the dog. "Why does he not make a pet of me?" said the donkey. "It is not fair. I work hard, and the dog only wags its tail, and barks, and jumps on its master\'s knee. It is not fair." Then the donkey said to himself, "If I do what the dog does, he may make a pet of me." So the donkey ran into the room. It brayed as loudly as it could. It wagged its tail so hard that it knocked over a jar on the table. Then it tried to jump on to its master\'s knee. The master thought the donkey was mad, and he shouted, "Help! Help!" Men came running in with sticks, and they beat the donkey till it ran out of the house, and they drove it back to the field. "I only did what the dog does," said the donkey," and yet they make a pet of the dog, and they beat me with sticks. It is not fair.';
 
-var token;
 var s=document.getElementById("corpus").value;
 var x;
 var y;
@@ -17,8 +16,11 @@ var b;
 function dropdown(){
 	var s=document.getElementById("corpus").value;
 	document.getElementById("demo2").innerHTML="Enter the number of tokens and types for the above corpus:"
-	document.getElementById("demo3").innerHTML="<table border='1' style='border-collapse:collapse'><tr><td>#Tokens</td><td><input type ='text' id='token'></td></tr><tr><td>#Types</td><td><input type ='text' id='type'></td></tr></table>";
+	document.getElementById("demo3").innerHTML="<table><tr><td>#Tokens</td><td><input type ='text' id='token'></td></tr><tr><td>#Types</td><td><input type ='text' id='type'></td></tr></table>";
 	document.getElementById("demo4").innerHTML="<button onclick='cal()'>Submit</button>";
+	document.getElementById("demo5").innerHTML="";
+	document.getElementById("demo6").innerHTML="";
+
 	if(s=="corpus1"){
         document.getElementById("demo1").innerHTML=passage1; 
 	    corp=passage1;
@@ -61,14 +63,14 @@ function cal(){
 	if(tokens==t1 && types==t2){
 		document.getElementById("demo5").innerHTML="<font color='green'>Right Answer</font>"+"<br><br><button onclick='newtype()'>Continue</button>"
 	}else{
-		document.getElementById("demo6").innerHTML="<font color='red'>Wrong Answer</font>"
+		document.getElementById("demo5").innerHTML="<font color='red'>Wrong Answer</font>"
 	}
 	    
 }
 
 function newtype(){
 	document.getElementById("demo4").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.";
-	document.getElementById("demo5").innerHTML="<table><tr><td>#new types</td></tr><tr><td><input type='text' id='new'></td></tr></table>";
+	document.getElementById("demo5").innerHTML="#new types<br><input type='text' id='new'>";
 	document.getElementById("demo6").innerHTML="<br><button>Submit</button>";
 }
 
