@@ -20,7 +20,7 @@ function dropdown(){
 	document.getElementById("demo4").innerHTML="<button onclick='cal()'>Submit</button>";
 	document.getElementById("demo5").innerHTML="";
 	document.getElementById("demo6").innerHTML="";
-
+    corp="";
 	if(s=="corpus1"){
         document.getElementById("demo1").innerHTML=passage1; 
 	    corp=passage1;
@@ -71,7 +71,26 @@ function cal(){
 function newtype(){
 	document.getElementById("demo4").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.";
 	document.getElementById("demo5").innerHTML="#new types<br><input type='text' id='new'>";
-	document.getElementById("demo6").innerHTML="<br><button>Submit</button>";
+	document.getElementById("demo6").innerHTML="<br><button onclick='reduce()'>Submit</button>";
+}
+
+
+function reduce(){
+	var ne=[];
+var nt=[];
+var len="";
+s1=corp.replace(/[^a-zA-Z ]/g, "");
+	s2=s1.toLowerCase();
+	s3= s2.split(' ');
+
+for(i=0;i<s3.length;i++){
+
+stemmer = new Snowball('English'); 
+stemmer.setCurrent(s3[i]);     
+stemmer.stem();
+ne.push(stemmer.getCurrent());
+} 
+
 }
 
 
