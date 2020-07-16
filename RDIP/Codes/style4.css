@@ -8,6 +8,7 @@ td {
    padding : 8px;
    height : 30px;
    border : 2px solid #ddd;
+   font-size: 20px
 }
 #token, #type {
    padding : 3px;
@@ -24,6 +25,9 @@ button{
 }
 #demo5{
 	font-size: 20px;
+}
+#demo7{
+   font-size: 20px;
 }
 #new{
 	width: 70px;

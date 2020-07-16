@@ -9,17 +9,18 @@ var x;
 var y;
 var z;
 var corp="";
-
-
 var b;
 
+
+//functionality of dropdown
 function dropdown(){
 	var s=document.getElementById("corpus").value;
 	document.getElementById("demo2").innerHTML="Enter the number of tokens and types for the above corpus:"
-	document.getElementById("demo3").innerHTML="<table><tr><td>#Tokens</td><td><input type ='text' id='token'></td></tr><tr><td>#Types</td><td><input type ='text' id='type'></td></tr></table>";
+	document.getElementById("demo3").innerHTML="<table><tr><td>#tokens</td><td><input type ='text' id='token'></td></tr><tr><td>#types</td><td><input type ='text' id='type'></td></tr></table>";
 	document.getElementById("demo4").innerHTML="<button onclick='cal()'>Submit</button>";
 	document.getElementById("demo5").innerHTML="";
 	document.getElementById("demo6").innerHTML="";
+	document.getElementById('demo7').innerHTML="";
     corp="";
 	if(s=="corpus1"){
         document.getElementById("demo1").innerHTML=passage1; 
@@ -32,7 +33,7 @@ function dropdown(){
        corp=passage3;
 	}
 }
-
+//to find number of tokens and types
 function cal(){
 	var tokens;
 	var types;
@@ -74,9 +75,9 @@ function newtype(){
 	document.getElementById("demo6").innerHTML="<br><button onclick='reduce()'>Submit</button>";
 }
 
-
+//Calculate number new types using stemming
 function reduce(){
-	var ne=[];
+var ne=[];
 var nt=[];
 var len="";
 s1=corp.replace(/[^a-zA-Z ]/g, "");
@@ -100,8 +101,10 @@ for(var i=0;i<ne.length;i++){
 var n=document.getElementById('new').value;
 if(n==len){
 	document.getElementById('new').style.backgroundColor="green";
+	document.getElementById('demo7').innerHTML="<font color='green'>Right Answer</font>";
 }else{
 	document.getElementById('new').style.backgroundColor="red";
+	document.getElementById('demo7').innerHTML="<font color='red'>Wrong Answer</font>";
 }
 
 }
