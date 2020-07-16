@@ -97,6 +97,13 @@ for(var i=0;i<ne.length;i++){
          }
          len=nt.length;
          console.log(len);
+var n=document.getElementById('new').value;
+if(n==len){
+	document.getElementById('new').style.backgroundColor="green";
+}else{
+	document.getElementById('new').style.backgroundColor="red";
+}
+
 }
 
 
