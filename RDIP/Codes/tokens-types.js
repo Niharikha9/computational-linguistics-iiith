@@ -90,7 +90,13 @@ stemmer.setCurrent(s3[i]);
 stemmer.stem();
 ne.push(stemmer.getCurrent());
 } 
-
+for(var i=0;i<ne.length;i++){
+         if(nt.indexOf(ne[i])===-1){
+            nt.push(ne[i]);
+         }
+         }
+         len=nt.length;
+         console.log(len);
 }
 
 
