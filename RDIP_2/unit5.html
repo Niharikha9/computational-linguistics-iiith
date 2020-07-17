@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
 	<title>Virtual labs</title>
 	<meta charset="UTF-8">
 </head>
 <body>
+	<h1>Experiment</h1>
+	<center>
+		<select id='language' onchange="language()">
+			<option value="select">---Select Language---</option>
+			<option value="english">English</option>
+			<option value="hindi">Hindi</option>
+		</select><br><br>
+		<select id='Sen'style='display:none'>
+            <option value="sel">--Select a Sentence--</option>
+			<option value="1" id='a'></option>
+			<option value="2" id='b'></option>
+			<option value="3" id='c'></option>
+			<option value="4" id='d'></option>
+			<option value="5" id='e'></option>			
+		</select>
+		
+	</center>
 <script src="pos.js"></script>
 </body>
 </html>
