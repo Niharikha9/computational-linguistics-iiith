@@ -31,6 +31,8 @@ function dropdown(){
 	} else if(s=="corpus3"){
         document.getElementById("demo1").innerHTML=passage3;
        corp=passage3;
+	}else if(s=="select"){
+		alert("Select a corpus");
 	}
 }
 //to find number of tokens and types
