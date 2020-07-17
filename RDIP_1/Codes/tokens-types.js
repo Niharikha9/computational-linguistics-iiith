@@ -17,7 +17,7 @@ function dropdown(){
 	var s=document.getElementById("corpus").value;
 	document.getElementById("demo2").innerHTML="Enter the number of tokens and types for the above corpus:"
 	document.getElementById("demo3").innerHTML="<table><tr><td>#tokens</td><td><input type ='text' id='token'></td></tr><tr><td>#types</td><td><input type ='text' id='type'></td></tr></table>";
-	document.getElementById("demo4").innerHTML="<button onclick='cal()'>Submit</button>";
+	document.getElementById("demo4").innerHTML="<button onclick='calculate()'>Submit</button>";
 	document.getElementById("demo5").innerHTML="";
 	document.getElementById("demo6").innerHTML="";
 	document.getElementById('demo7').innerHTML="";
@@ -34,7 +34,7 @@ function dropdown(){
 	}
 }
 //to find number of tokens and types
-function cal(){
+function calculate(){
 	var tokens;
 	var types;
 	y=corp.replace(/[^a-zA-Z ]/g, "");
@@ -74,7 +74,7 @@ function newtype(){
 	document.getElementById("demo5").innerHTML="#new types<br><input type='text' id='new'>";
 	document.getElementById("demo6").innerHTML="<br><button onclick='reduce()'>Submit</button>";
 }
-
+var stemmer = new Snowball('English'); 
 //Calculate number new types using stemming
 function reduce(){
 var ne=[];
@@ -83,21 +83,51 @@ var len="";
 s1=corp.replace(/[^a-zA-Z ]/g, "");
 	s2=s1.toLowerCase();
 	s3= s2.split(' ');
-
+var k=0;
 for(i=0;i<s3.length;i++){
-
-stemmer = new Snowball('English'); 
+if(s3[i]=='found')
+	s3[i]='find';
+if(s3[i]=='ate')
+	s3[i]='eat';
+if(s3[i]=='not')
+	s3[i]='no';
+if(s3[i]=='this')
+	s3[i]='that';
+if(s3[i]=='grown' || s3[i]=='grew')
+	s3[i]='grow';
+if(s3[i]=='was'|| s3[i]=='are')
+	s3[i]='is';
+if(s3[i]=='did'|| s3[i]=='done' || s3[i]=='does')
+	s3[i]='do';
+if(s3[i]=='ran')
+	s3[i]='run';
+if(s3[i]=='me')
+	s3[i]='i';
+if(s3[i]=='said')
+	s3[i]='say';
+if(s3[i]=='heard')
+	s3[i]='hear';
+if(s3[i]=='played')
+	s3[i]='play';
+if(s3[i]=='it' || s3[i]=='himself' || s3[i]=='his' || s3[i]=='him')
+			s3[i]='he';
+if(s3[i]=='would')
+	s3[i]='will';
+if(s3[i]=='had')
+	s3[i]='have';
 stemmer.setCurrent(s3[i]);     
 stemmer.stem();
 ne.push(stemmer.getCurrent());
-} 
+ 
 for(var i=0;i<ne.length;i++){
          if(nt.indexOf(ne[i])===-1){
             nt.push(ne[i]);
          }
          }
+     }
          len=nt.length;
-         console.log(len);
+         //console.log(len);
+         
 var n=document.getElementById('new').value;
 if(n==len){
 	document.getElementById('new').style.backgroundColor="green";
@@ -108,5 +138,3 @@ if(n==len){
 }
 
 }
-
-

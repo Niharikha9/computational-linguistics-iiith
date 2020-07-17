@@ -1,0 +1,15 @@
+1.Functionality to select Corpus from dropdown and to represent the selected passage below it, along with this it produces a table asking for number of tokens and types.
+
+2.When we click on submit, if the number of tokens and types entered are wrong, the boxes are filled with red colour.
+
+3.If the number of tokens and number of types entered are correct, the boxes are filled with green colour and it shows right answer along with a button "Continue".
+
+4.If the continue button is clicked, the submit button is vanished and another message is displayed asking number of new types along with submit button.
+
+5.When we click on submit button after filling the new types box, it displays right answer or wrong answer.
+
+6.To find the number of tokens, a functionality must be added that counts number of words from the selected corpus.
+
+7.To find the number of types, a functionality must be added that counts number of unique words.
+
+8.To find new types of words we must use Snowball Stemmer.
