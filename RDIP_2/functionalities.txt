@@ -1,0 +1,11 @@
+1.Functionality of Selecting the language from the dropdown.
+
+2.Functionality of selecting a sentence from the selected language.
+
+3.All the words of the sentence must be represented below in table along with dropdowns for selecting POS tag followed by a submit button.
+
+4.On clicking the submit buttton,To check the correct answer with the answers given by the user  and also to populate the 4th column if user enters any wrong option in the dropdown, you will have to incorporate the POS tagger library into your javascript code.
+
+5.If the answer is wrong ,"get correct answer button is displayed below submit button.
+
+6.This button is used to produce correct answers in the table. 
