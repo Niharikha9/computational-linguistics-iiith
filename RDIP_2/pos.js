@@ -37,12 +37,14 @@ function language(){
 }
 var w=[];
 
-var id=document.getElementById("language").value
-console.log(id);
+
+
 function table(){
 	var sen="";
 	var sent="";
 	var tab="";
+	var id=document.getElementById("language").value;
+	console.log(id);
 	sen = document.getElementById('Sen').value;
 	console.log(sen);
     
@@ -62,6 +64,12 @@ function table(){
 		if (sen == "5"){
 			sent=english[4];
 		}
+		document.getElementById('msg').innerHTML="<i><font color='blue'>Select the POS tag for Corresponding words<i></font>";
+    w=sent.split(' ');
+    console.log(w);
+    for(i = 0 ; i<w.length ; i++){
+		tab += "<tr><td>"+w[i]+"</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+		}
 	}
 	if(id == "hindi"){
 		if (sen == "1"){
@@ -79,14 +87,15 @@ function table(){
 		if (sen == "5"){
 			sent=hindi[4];
 		}
-	}
-	console.log(sent);
+		console.log(sent);
 	document.getElementById('msg').innerHTML="<i><font color='blue'>Select the POS tag for Corresponding words<i></font>";
     w=sent.split(' ');
     console.log(w);
     for(i = 0 ; i<w.length ; i++){
-		tab += "<tr><td>"+w[i]+"</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Postposition'>Postposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+		tab += "<tr><td>"+w[i]+"</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Postposition'>Postposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
 		}
+	}
+	
     document.getElementById('table').innerHTML="<table><tr><th>LEXICON</th><th>POS</th><th></th><th></th></tr><tr></td></tr>"+tab+"</table>";
     
     
