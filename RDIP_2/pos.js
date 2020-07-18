@@ -12,7 +12,7 @@ var hindi=["राम ने सीता के लिए फल तोड़ा�
 
 
 function language(){
-	s=document.getElementById("language").value
+	s=document.getElementById("language").value;
 	if(s=="english"){
 		document.getElementById('Sen').style.display='initial';
 		document.getElementById('a').innerHTML=english[0];
@@ -34,4 +34,60 @@ function language(){
 	if(s=="select"){
 		alert("Select a language");
 	}
+}
+var w=[];
+
+var id=document.getElementById("language").value
+console.log(id);
+function table(){
+	var sen="";
+	var sent="";
+	var tab="";
+	sen = document.getElementById('Sen').value;
+	console.log(sen);
+    
+	if(s == "english"){
+		if (sen == "1"){
+			sent=english[0];
+		}
+		if (sen == "2"){
+			sent=english[1];
+		}
+		if (sen == "3"){
+			sent=english[2];
+		}
+		if (sen == "4"){
+			sent=english[3];
+		}
+		if (sen == "5"){
+			sent=english[4];
+		}
+	}
+	if(id == "hindi"){
+		if (sen == "1"){
+			sent=hindi[0];
+		}
+		if (sen == "2"){
+			sent=hindi[1];
+		}
+		if (sen == "3"){
+			sent=hindi[2];
+		}
+		if (sen == "4"){
+			sent=hindi[3];
+		}
+		if (sen == "5"){
+			sent=hindi[4];
+		}
+	}
+	console.log(sent);
+	document.getElementById('msg').innerHTML="<i><font color='blue'>Select the POS tag for Corresponding words<i></font>";
+    w=sent.split(' ');
+    console.log(w);
+    for(i = 0 ; i<w.length ; i++){
+		tab += "<tr><td>"+w[i]+"</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Postposition'>Postposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+		}
+    document.getElementById('table').innerHTML="<table><tr><th>LEXICON</th><th>POS</th><th></th><th></th></tr><tr></td></tr>"+tab+"</table>";
+    
+    
 }

@@ -3,6 +3,8 @@
 <head>
 	<title>Virtual labs</title>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script defer src="pos.js"></script>
 </head>
 <body>
 	<h1>Experiment</h1>
@@ -12,16 +14,16 @@
 			<option value="english">English</option>
 			<option value="hindi">Hindi</option>
 		</select><br><br>
-		<select id='Sen'style='display:none'>
+		<select id='Sen'style='display:none' onchange="table()">
             <option value="sel">--Select a Sentence--</option>
 			<option value="1" id='a'></option>
 			<option value="2" id='b'></option>
 			<option value="3" id='c'></option>
 			<option value="4" id='d'></option>
 			<option value="5" id='e'></option>			
-		</select>
-		
+		</select><br><br><br>
+		<p id="msg"></p>
+		<p id="table"></p>
 	</center>
-<script src="pos.js"></script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+table {
+   border-collapse : collapse;
+   width : auto; 
+   margin : auto;
+   border-width : 10px;
+}
+td {
+   padding : 8px;
+   height : 30px;
+   border : 2px solid #ddd;
+   font-size: 20px
+}
+th {
+   padding : 8px;
+   height : 30px;
+   border : 2px solid #ddd;
+   font-size: 20px;
+   color:brown;
+}
+#msg {
+	font-size: 20px;
+}
+select{
+	font-size: 20px;
+}
