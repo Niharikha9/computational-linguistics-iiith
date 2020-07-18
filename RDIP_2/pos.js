@@ -97,6 +97,6 @@ function table(){
 	}
 	
     document.getElementById('table').innerHTML="<table><tr><th>LEXICON</th><th>POS</th><th></th><th></th></tr><tr></td></tr>"+tab+"</table>";
-    
+    document.getElementById('submit').innerHTML="<button style='font-size:20px'>Submit</button>";    
     
 }
